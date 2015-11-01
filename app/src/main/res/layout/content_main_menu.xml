@@ -17,7 +17,8 @@
 
     <Button
         android:layout_width="260dp"
-        android:layout_height="40dp"
+        android:layout_height="80dp"
+        android:textSize="24dp"
         android:text="Map"
         android:id="@+id/button"
         android:maxWidth="260dp"
@@ -25,15 +26,20 @@
         android:layout_below="@+id/textView"
         android:textColor="@color/maize"
         android:onClick="mapView"
+        android:layout_marginBottom="25dp"
         android:layout_alignStart="@+id/button2" />
     <Button
         android:layout_width="260dp"
-        android:layout_height="40dp"
+        android:layout_height="80dp"
+        android:textSize="24dp"
+
         android:text="Key"
+        android:onClick="KeyActivity"
         android:id="@+id/button2"
         android:background="@color/blue"
         android:textColor="@color/maize"
         android:layout_below="@+id/button"
+        android:layout_marginBottom="25dp"
         android:layout_centerHorizontal="true" />
 
 
@@ -41,7 +47,9 @@
 
     <Button
         android:layout_width="260dp"
-        android:layout_height="40dp"
+        android:layout_height="80dp"
+        android:textSize="24dp"
+
         android:text="About"
         android:id="@+id/button3"
         android:background="@color/blue"
@@ -49,6 +57,7 @@
         android:layout_below="@+id/button2"
         android:textColor="@color/maize"
         android:onClick="displayInfo"
+        android:layout_marginBottom="25dp"
         android:layout_alignStart="@+id/button2" />
 
 

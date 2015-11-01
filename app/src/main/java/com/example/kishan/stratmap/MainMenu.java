@@ -65,7 +65,12 @@ public class MainMenu extends AppCompatActivity {
 
     }
 
+    public void KeyActivity(View view){
 
+        Intent intent=new Intent(this, KeyActivity.class);
+        startActivity(intent);
+
+    }
 
 
 }
