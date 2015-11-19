@@ -1,13 +1,18 @@
 package com.example.kishan.stratmap;
 
-import android.support.v4.app.FragmentActivity;
+import android.location.Location;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.view.View;
 
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapView extends FragmentActivity implements OnMapReadyCallback {
@@ -38,9 +43,51 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        //Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient):
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng mylocation = new LatLng(42.2932850, -83.7138350);
+        mMap.addMarker(new MarkerOptions().position(mylocation).title("Hazard").snippet("Potholes").draggable(true));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(mylocation));
+        mMap.setMyLocationEnabled(true);
+        mMap.addMarker(new MarkerOptions()
+                .position(mylocation)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).draggable(true).title("Hazard").snippet("Traffic"));
+
+        mMap.addMarker(new MarkerOptions()
+                .position(mylocation)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).draggable(true).title("Hazard").snippet("Debris"));
+
+
+    }
+
+    public void PotholesPress(View view) {
+
+        LatLng location = new LatLng(50,50);
+        mMap.addMarker(new MarkerOptions().position(location).title("Hazard").snippet("Potholes").draggable(true));
+
+
+
+
+    }
+
+    public void TrafficPress(View view){
+
+        LatLng location = new LatLng(42,-90);
+        mMap.addMarker(new MarkerOptions()
+                .position(location)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).draggable(true).title("Hazard").snippet("Traffic"));
+
+
+    }
+
+    public void DebrisPress(View view){
+        mMap.setMyLocationEnabled(true);
+        LatLng location = new LatLng(52,150);
+        mMap.addMarker(new MarkerOptions()
+                .position(location)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).draggable(true).title("Hazard").snippet("Debris"));
+
+
+
     }
 }

@@ -7,6 +7,8 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
@@ -58,6 +60,19 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kishan.stratmap.MainMenu" />
         </activity>
+
+
+        <activity
+
+            android:name=".PotholesActivity"
+            android:label="@string/title_activity_potholes"
+            android:parentActivityName=".MainMenu"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kishan.stratmap.MainMenu" />
+        </activity
+            >
     </application>
 
 </manifest>

@@ -72,5 +72,10 @@ public class MainMenu extends AppCompatActivity {
 
     }
 
+    public void PotholesActivity(View view) {
+        Intent intent=new Intent(this,PotholesActivity.class);
+        startActivity(intent);
+    }
+
 
 }

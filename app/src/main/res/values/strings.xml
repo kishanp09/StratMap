@@ -2,7 +2,12 @@
     <string name="app_name">StratMap</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_about_page">AboutPage</string>
-    <string name="AboutTheApp">This application was created by the \n University of Michigan Solar Car Team. \nAuthors: Kishan Patel and Sutton Bradley</string>
+    <string name="AboutTheApp">This application was created for use by the \n
+        University of Michigan Solar Car Team.
+        \nAuthors: Kishan Patel and Sutton Bradley \n
+        Go Blue!</string>
     <string name="title_activity_map_view">Map</string>
     <string name="title_activity_key">KeyActivity</string>
+    <string name="google_maps_key">MapView</string>
+    <string name="title_activity_potholes">PotholesActivity</string>
 </resources>
