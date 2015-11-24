@@ -20,7 +20,7 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Firebase.setAndroidContext(this); //necessary for Firebase lib to run
 
-        LatLng myLocation = new LatLng(70, 120);
+        LatLng myLocation = new LatLng(60, 120);
         Firebase stratFirebase = new Firebase("https://crackling-heat-4003.firebaseio.com/"); //initialize new Firebase
         Firebase point = stratFirebase.child("Locations").child("newPoint");
         point.setValue(myLocation);
