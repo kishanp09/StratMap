@@ -10,6 +10,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
 
     <application
         android:allowBackup="true"
@@ -50,7 +53,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kishan.stratmap.MainMenu" />
-
         </activity>
         <activity
             android:name=".KeyActivity"
@@ -61,10 +63,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kishan.stratmap.MainMenu" />
         </activity>
-
-
         <activity
-
             android:name=".PotholesActivity"
             android:label="@string/title_activity_potholes"
             android:parentActivityName=".MainMenu"
@@ -72,8 +71,7 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.kishan.stratmap.MainMenu" />
-        </activity
-            >
+        </activity>
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
+import com.firebase.client.Firebase;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -74,9 +75,14 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         double x = location.getLatitude();
         double y = location.getLongitude();
-        LatLng mylocation = new LatLng(location.getLatitude(),location.getLongitude());
+        LatLng myLocation = new LatLng(location.getLatitude(),location.getLongitude());
+
+        Firebase stratFirebase = new Firebase("https://crackling-heat-4003.firebaseio.com/"); //initialize new Firebase
+        Firebase point = stratFirebase.child("Locations").child("newPoint");
+        point.setValue(myLocation);
+
         mMap.addMarker(new MarkerOptions()
-                .position(mylocation)
+                .position(myLocation)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)).draggable(true).title("Hazard").snippet("Potholes"));
         /* LatLng location = new LatLng(50, 50);
         mMap.addMarker(new MarkerOptions().position(location).title("Hazard").snippet("Potholes").draggable(true));
@@ -90,9 +96,9 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         double x = location.getLatitude();
         double y = location.getLongitude();
-        LatLng mylocation = new LatLng(location.getLatitude(),location.getLongitude());
+        LatLng myLocation = new LatLng(location.getLatitude(),location.getLongitude());
         mMap.addMarker(new MarkerOptions()
-                .position(mylocation)
+                .position(myLocation)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)).draggable(true).title("Hazard").snippet("Traffic"));
         //LatLng location = new LatLng(42, -90);
        /* mMap.addMarker(new MarkerOptions()
@@ -109,9 +115,9 @@ public class MapView extends FragmentActivity implements OnMapReadyCallback {
         Location location = lm.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         double x = location.getLatitude();
         double y = location.getLongitude();
-        LatLng mylocation = new LatLng(location.getLatitude(),location.getLongitude());
+        LatLng myLocation = new LatLng(location.getLatitude(),location.getLongitude());
         mMap.addMarker(new MarkerOptions()
-                .position(mylocation)
+                .position(myLocation)
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).draggable(true).title("Hazard").snippet("Debris"));
 
         /*if (checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

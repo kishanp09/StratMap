@@ -10,11 +10,21 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.firebase.client.Firebase;
+import com.google.android.gms.maps.model.LatLng;
+
 public class MainMenu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Firebase.setAndroidContext(this); //necessary for Firebase lib to run
+
+        LatLng myLocation = new LatLng(70, 120);
+        Firebase stratFirebase = new Firebase("https://crackling-heat-4003.firebaseio.com/"); //initialize new Firebase
+        Firebase point = stratFirebase.child("Locations").child("newPoint");
+        point.setValue(myLocation);
+
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
